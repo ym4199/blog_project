@@ -1,7 +1,12 @@
 {% extends 'blog/layout.html' %}
 
 {% block content %}
+
     {% for post in post_list %}
-        {{ post.title }}
+        <a href="{% url 'blog:post_detail' post.pk%}">
+            <div>{{ post.title }}</div>
+        </a>
     {% endfor %}
+
+
 {% endblock %}
